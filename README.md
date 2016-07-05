@@ -35,3 +35,7 @@ Summary of other methods:
 To check
 - CTTS: speech synthesis is very successful
 
+#Improvasher: A Real-Time Mashup System for Live Musical Input. (inproceedings) Davies, Matthew EP and Stark, Adam M and Gouyon, Fabien and Goto, Masataka
+
+The goal of this paper is related to CSS, but somewhat different: it is about creating beat-level mashups that accompany a given input piece. Smooth concatenation is done via 10ms crossfading.
+
