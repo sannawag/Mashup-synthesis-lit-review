@@ -35,7 +35,12 @@ Summary of other methods:
 To check
 - CTTS: speech synthesis is very successful
 
-#Improvasher: A Real-Time Mashup System for Live Musical Input. (inproceedings) Davies, Matthew EP and Stark, Adam M and Gouyon, Fabien and Goto, Masataka
-
+##Improvasher: A Real-Time Mashup System for Live Musical Input. (inproceedings) Davies, Matthew EP and Stark, Adam M and Gouyon, Fabien and Goto, Masataka
 The goal of this paper is related to CSS, but somewhat different: it is about creating beat-level mashups that accompany a given input piece. Smooth concatenation is done via 10ms crossfading.
+
+##The Caterpillar System for Data-Driven Concatenative Sound Synthesis, Diemo Schwarz (2005)
+
+This paper uses the Viterbi algorithm to concatenate sound units, and uses a similarity measure to give a score for both sequence and segment. However, each unit is half of a note, so there are some additional features of a different (e.g. ADSR). 
+
+A database is used for the units, which are organized by "category descriptors (e.g. violin → strings → instrument)", "static descriptors (e.g. Midi note number)", and "dynamic descriptors (e.g. fundamental frequency).
 
