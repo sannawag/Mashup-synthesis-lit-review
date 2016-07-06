@@ -42,5 +42,7 @@ The goal of this paper is related to CSS, but somewhat different: it is about cr
 
 This paper uses the Viterbi algorithm to concatenate sound units, and uses a similarity measure to give a score for both sequence and segment. However, each unit is half of a note, so there are some additional features of a different (e.g. ADSR). 
 
+Sequence and segment scores are calculated using a sum of weighted feature costs. The segment scores have different options, depending on whether much change is expected (e.g. onset), or not (e.g. sustain).
+
 A database is used for the units, which are organized by "category descriptors (e.g. violin → strings → instrument)", "static descriptors (e.g. Midi note number)", and "dynamic descriptors (e.g. fundamental frequency).
 
