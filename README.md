@@ -1,7 +1,7 @@
 # Mashup-synthesis-lit-review
 Literary review mashup, also called concatenative sound synthesis, related to Performance-view project
 
-## Bob L. Sturm: adaptive concatenative sound synthesis and its application to micromontage composition (2006)
+### Bob L. Sturm: adaptive concatenative sound synthesis and its application to micromontage composition (2006)
 Summary of other methods:
 - ACSS: 
 - Musaicing (Zils and Pachet 2001)
@@ -35,10 +35,10 @@ Summary of other methods:
 To check
 - CTTS: speech synthesis is very successful
 
-##Improvasher: A Real-Time Mashup System for Live Musical Input. (inproceedings) Davies, Matthew EP and Stark, Adam M and Gouyon, Fabien and Goto, Masataka
+###Improvasher: A Real-Time Mashup System for Live Musical Input. (inproceedings) Davies, Matthew EP and Stark, Adam M and Gouyon, Fabien and Goto, Masataka
 The goal of this paper is related to CSS, but somewhat different: it is about creating beat-level mashups that accompany a given input piece. Smooth concatenation is done via 10ms crossfading.
 
-##The Caterpillar System for Data-Driven Concatenative Sound Synthesis, Diemo Schwarz (2005)
+###The Caterpillar System for Data-Driven Concatenative Sound Synthesis, Diemo Schwarz (2005)
 
 This paper uses the Viterbi algorithm to concatenate sound units, and uses a similarity measure to give a score for both sequence and segment. However, each unit is half of a note, so there are some additional features of a different (e.g. ADSR). 
 
@@ -46,11 +46,11 @@ Sequence and segment scores are calculated using a sum of weighted feature costs
 
 A database is used for the units, which are organized by "category descriptors (e.g. violin → strings → instrument)", "static descriptors (e.g. Midi note number)", and "dynamic descriptors (e.g. fundamental frequency).
 
-##Schwarz, Diemo, and Benjamin Hackbarth. "Navigating variation: composing for audio mosaicing." International Computer Music Conference (ICMC). 2012.
+###Schwarz, Diemo, and Benjamin Hackbarth. "Navigating variation: composing for audio mosaicing." International Computer Music Conference (ICMC). 2012.
 
 This more recently published paper describes a system that lets a composer interact more directly with the unit selection process.
 
-##TIMBRE REMAPPING THROUGH A REGRESSION-TREE TECHNIQUE, Dan Stowell and Mark D. Plumbley, Centre for Digital Music, Queen Mary University of London, UK (2010)
+###TIMBRE REMAPPING THROUGH A REGRESSION-TREE TECHNIQUE, Dan Stowell and Mark D. Plumbley, Centre for Digital Music, Queen Mary University of London, UK (2010)
 
 "We consider the task of inferring associations between two differently-distributed and unlabelled sets of timbre data."
 
