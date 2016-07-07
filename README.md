@@ -1,6 +1,8 @@
 # Mashup-synthesis-lit-review
 Literary review mashup, also called concatenative sound synthesis, related to Performance-view project
 
+#Articles
+
 ### Bob L. Sturm: adaptive concatenative sound synthesis and its application to micromontage composition (2006)
 Summary of other methods:
 - ACSS: 
@@ -63,4 +65,28 @@ This more recently published paper describes a system that lets a composer inter
 "We chose a set of 10 common acoustic timbre features: spectral power, spectral power ratio in 5 log-spaced sub- bands (50–400, 400–800, 800–1600, 1600–3200, and 3200– 6400 Hz), spectral centroid, spectral 95- and 25-percentiles and zero-crossing rate (for definitions see [26])...Grains with a very low spectral power (< 0.002) were treated as silences and discarded."
 
 "linear crossfade between grains."
+
+##To check later
+
+###definitely
+
+[PDF] Cross-associating unlabelled timbre distributions to create expressive musical mappings.
+D Stowell, MD Plumbley - WAPA, 2010 - jmlr.org
+
+The sound space as musical instrument: Playing corpus-based concatenative synthesis
+D Schwarz - New Interfaces for Musical Expression (NIME), 2012 - hal.archives-ouvertes.fr
+
+VOICE-CONTROLLED INTERFACE FOR DIGITAL MUSICAL INSTRUMENTS
+S Fasciani - 2014 - scholarbank.nus.edu.sg
+
+[HTML] Interacting with a Corpus of Sounds
+D Schwarz - SI13: NTU/ADM Symposium on Sound and Interactivity, 2013 - econtact.ca
+
+###If there is time
+
+[13] J.-J. Aucouturier and F. Pachet, “Improving timbre similarity: how high’s the sky?,” Journal of Negative Results in Speech and Audio Sciences, vol. 1, no. 1, 2004.
+
+[26] G. Peeters, “A large set of audio features for sound de- scription,” tech. rep., IRCAM, 2004.
+
+[17] J. Wouters and M. W. Macon, “A perceptual evalua- tion of distance measures for concatenative speech syn- thesis,” in Proceedings of ICSLP’98, vol. 6, (Sydney), pp. 2747–2750, Nov 1998.
 
