@@ -78,6 +78,37 @@ Finally, a performance for a new score is computed using candidate selection and
 -	Ability to change “breathiness”, roughness and other such characteristics
 -	Transformation: Spectral Peak Processing used for transposition, phase correction, equalization (timbre adjustment to envelope), phase vocoding, spectral interpolation
 
+###need to check Bonada and Serra (2007) for Vocaloid
+
+###TIMBRE REMAPPING THROUGH A REGRESSION-TREE TECHNIQUE, Dan Stowell and Mark D. Plumbley, Centre for Digital Music, Queen Mary University of London, UK (2010)
+
+"We consider the task of inferring associations between two differently-distributed and unlabelled sets of timbre data."
+
+"The core concept is to recursively partition the dataset, at each step splitting it into two subsets using a threshold on one of the independent variables (i.e. a splitting hyperplane orthogo- nal to one axis). The choice of split at each step is made to minimise an “impurity” criterion for the value of the re- sponse variable in the subsets, often based on the mean squared error...We will develop an existing unsupervised application of regression trees for this task."
+
+"at each step of the recursion the data coming from the two distributions are separately centred. One single principal component is then calculated from their union. The recursion therefore generates two “similar but different” trees, implementing the notion that the two datasets have similarities in struc- ture (the orientations of the splitting planes are the same) but may have differences in location at various scales (the centroids of large or small subsets of the data are allowed to differ)...we weight the calculation so as to give equal emphasis to each of the datasets"
+
+"To perform a remapping using a XAMRT data struc- ture, one takes a data point and descends the tree, at each split centring it by subtracting CX or CY as appropriate and then deciding which side of the splitting plane it falls. When the leaf node is reached, it contains two sets of train- ing data points (a subset each of X and Y ). To choose a corresponding coordinate relating to the opposite distribu- tion, one could for example use a random datum selected from the opposite subset, or the centroid of that subset, de- pending on the application. (If the sizes of the datasets are similar then the leaf will often contain just one datum from each of the two distributions.)"
+
+"We chose a set of 10 common acoustic timbre features: spectral power, spectral power ratio in 5 log-spaced sub- bands (50–400, 400–800, 800–1600, 1600–3200, and 3200– 6400 Hz), spectral centroid, spectral 95- and 25-percentiles and zero-crossing rate (for definitions see [26])...Grains with a very low spectral power (< 0.002) were treated as silences and discarded."
+
+"linear crossfade between grains."
+
+### Lindemann, Synful
+- Description by Serra
+- "Reconstructive phrase synthesis (RPM)
+- Blend of functional additive synthesis and phrase-oriented parametric concatenative synthesis that can be used both off-line from a score, and real-time from MIDI performance controls
+- Slow-varying harmonic componenents are directly predicted from the input score or controls via spectral nonlinear prediction based on neural networks."
+
+### Ramirez et al. (2008) 
+- "Explore and compare different machine-learning techniques for inductin both an interpretable expressive performance model and a generative one" (Serra)
+
+### Canazza et al. (2004)
+- "Modify the expressive content of a performance in a gradual way among different moods. They use a linar model to carry out the alterations based on previous segmentation, and they modify the melodies at both the symbolic and audio-signal levels." (Serra)
+
+### Dannenberg, Pellerin, Derenyi (1998)
+- "Study trumpet performance by computing amplitude descriptors." (Serra) "Statistical analysis techiniques used for analyzing trumpet envelopes led the authors to find significant envelope groupings."
+
 ### Bob L. Sturm: adaptive concatenative sound synthesis and its application to micromontage composition (2006)
 Summary of other methods:
 - ACSS: 
@@ -127,19 +158,6 @@ A database is used for the units, which are organized by "category descriptors (
 
 This more recently published paper describes a system that lets a composer interact more directly with the unit selection process.
 
-###TIMBRE REMAPPING THROUGH A REGRESSION-TREE TECHNIQUE, Dan Stowell and Mark D. Plumbley, Centre for Digital Music, Queen Mary University of London, UK (2010)
-
-"We consider the task of inferring associations between two differently-distributed and unlabelled sets of timbre data."
-
-"The core concept is to recursively partition the dataset, at each step splitting it into two subsets using a threshold on one of the independent variables (i.e. a splitting hyperplane orthogo- nal to one axis). The choice of split at each step is made to minimise an “impurity” criterion for the value of the re- sponse variable in the subsets, often based on the mean squared error...We will develop an existing unsupervised application of regression trees for this task."
-
-"at each step of the recursion the data coming from the two distributions are separately centred. One single principal component is then calculated from their union. The recursion therefore generates two “similar but different” trees, implementing the notion that the two datasets have similarities in struc- ture (the orientations of the splitting planes are the same) but may have differences in location at various scales (the centroids of large or small subsets of the data are allowed to differ)...we weight the calculation so as to give equal emphasis to each of the datasets"
-
-"To perform a remapping using a XAMRT data struc- ture, one takes a data point and descends the tree, at each split centring it by subtracting CX or CY as appropriate and then deciding which side of the splitting plane it falls. When the leaf node is reached, it contains two sets of train- ing data points (a subset each of X and Y ). To choose a corresponding coordinate relating to the opposite distribu- tion, one could for example use a random datum selected from the opposite subset, or the centroid of that subset, de- pending on the application. (If the sizes of the datasets are similar then the leaf will often contain just one datum from each of the two distributions.)"
-
-"We chose a set of 10 common acoustic timbre features: spectral power, spectral power ratio in 5 log-spaced sub- bands (50–400, 400–800, 800–1600, 1600–3200, and 3200– 6400 Hz), spectral centroid, spectral 95- and 25-percentiles and zero-crossing rate (for definitions see [26])...Grains with a very low spectral power (< 0.002) were treated as silences and discarded."
-
-"linear crossfade between grains."
 
 ##To check later
 
