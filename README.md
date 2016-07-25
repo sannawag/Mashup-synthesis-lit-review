@@ -35,7 +35,29 @@ Then, Expressive Performance is modeled as follows:
 - Each note in the musical score is characterized by a set of features which describe its context: pitch, duration, metrical strength, relative pitch, duration of neighboring notes, current note's Narmour structures
 - Also, intra-note features are computed: attact level, sustain relative duration, sustain slope, legato from left, legato to right, mean energy, spectral centroid, spectral tilt
 **Training**
-- Tilde's inductive algorithm used to predict duration transformation, onset deviation, energy variation and note alterations
+- Tilde's inductive algorithm used to predict expressiveness
+**Note-Level prediction**
+- duration transformation: percentage of note score duration
+- onset deviation: fraction of a quarter note
+- energy variation: percentage of average energy value from full database
+- note alterations: consolidation, fragmentation, ornamentation, none
+**Transition-Level Prediction**
+- assign to one of the four groups (e.g. SIL-n-NOTE)
+- 0 to 1 value for legato
+**Intra-Note Level Prediction**
+- k-means clustering to all the notes in a particular articulation group using the intra-note features
+
+Finally, a performance for a new score is computed using candidate selection and the Viterbi algorithm.
+1. Generate audio sequance based rediction of the expressive performance model
+2. Choose best candidates based on cost of transformations and on the concatenation
+**Candidate selection**
+- Pre-clustering avoids sparseness in certain areas resulting from certain set of dimensions 
+- There will always be a selection of notes (retain n best candidates). The remaining features are the ones that can be transformed
+**Computation of costs**
+- Time stretching for ASR sections, frequency transposition, energy transformation
+- Concatenation: legato cost, interval cost, continuity cost (interpolating surrounding frames)
+**Final concatenation**
+- smooth discontinuities between end of previous note and beginning of current with respect to amplitude, pitch and timbre
 
 ###[Vocaloid](http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.455.9800&rep=rep1&type=pdf) 
 - Commercial Yamaha program used by Goto for synthesis)
