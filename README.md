@@ -9,6 +9,34 @@ Literary review mashup, also called concatenative sound synthesis, related to Pe
 
 # Articles
 
+###[Maestre, Esteban, et al. "Expressive concatenative synthesis by reusing samples from real performance recordings." Computer Music Journal 33.4 (2009): 23-42.](http://www.mitpressjournals.org/doi/pdf/10.1162/comj.2009.33.4.23)
+- Serra et al. previously designed Vocaloid and are now doing something similar for instruments
+- Note-by-note concatenative synthesis
+- Database of four jazz standards played by a professional saxophonist at eleven different tempi around the nominal one
+- 1.5 hours of recording, 5000 notes
+- The following features are computed:
+**Melodic and musical description**
+1. Parsing of recording to compute MIDi pitches, onsets, durations
+2. Automatic generation of 3 Narmour structures per note: based on concept that melodic patterns or grops can be identified that either satisfy or violate the implication as predicted by the principles
+**Intra-Note and Transition Features**
+Energy envelope contour and curvature (one value per frame) are used to compute:
+1. Attack, release or Attack, sustain, release: linear segments (decay is characterized as sustain with various slopes)
+2. For each intra-note segment, describe duration (absolute and relative to note duration), start and end times, initial and final energy values (absolute and relative to note maximum), ans slope.
+3. Also extract from the sustain: spectral centroid and spectral tilt.
+4. Compute note detachment using a formula which looks at energy envelope minimum position and compares amplitude curvature around it to the curve representing the smoothest case of articulation. Legato descriptor between 0 and 1.
+5. Pitch contours are considered to have a 3-part linear structure
+**Note classification**
+1. Four different articulation classes: SIL-n-SIL, SIL-n-NOTE, NOTE-n-SIL, NOTE-n-NOTE: will be a strict matching constraint
+2. Four each of the four categories, divide notes into clusters (which provide amplitude and timbre) based on 6 features: attack level, sustain duration (relative), sustain slope, spectral centroid, spectral tilt. 
+3. Annotate notes for consolidations (agglomeration of notes), fragmentations, and ornamentations
+
+Then, Expressive Performance is modeled as follows:
+**Training data** 
+- Each note in the musical score is characterized by a set of features which describe its context: pitch, duration, metrical strength, relative pitch, duration of neighboring notes, current note's Narmour structures
+- Also, intra-note features are computed: attact level, sustain relative duration, sustain slope, legato from left, legato to right, mean energy, spectral centroid, spectral tilt
+**Training**
+- Tilde's inductive algorithm used to predict duration transformation, onset deviation, energy variation and note alterations
+
 ###[Vocaloid](http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.455.9800&rep=rep1&type=pdf) 
 - Commercial Yamaha program used by Goto for synthesis)
 - The samples must include all possible combinations of phonemes of the target language. In English case, all possible combinations of C-V, V-C, V-V are recorded, processed, and put into the Library. The developer can optionally add polyphones with more than two phonemes. 
