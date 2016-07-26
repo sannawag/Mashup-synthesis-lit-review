@@ -78,9 +78,41 @@ Finally, a performance for a new score is computed using candidate selection and
 -	Ability to change “breathiness”, roughness and other such characteristics
 -	Transformation: Spectral Peak Processing used for transposition, phase correction, equalization (timbre adjustment to envelope), phase vocoding, spectral interpolation
 
-###need to check Bonada and Serra (2007) for Vocaloid
+###[Bonada, Jordi, and Xavier Serra. "Synthesis of the singing voice by performance sampling and spectral models." IEEE signal processing magazine 24.2 (2007): 67-79.](http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.354.155&rep=rep1&type=pdf)
+- **Transformation model**
+- EpR (Excitation plus Resonances) source/filter approach to Voice Model:
+  - 3 filters in cascade
+    - Source filter response with exponential curve plus one resonance
+    - Vocal tract: vector of resonances which emulate voice formants
+    - Difference between two previous filters and harmonic envelope
+- Transformation technique: Phase-Locked Vocoder
+  - Segment spectrum into regions
+  - Each is represented and controlled by harmonic spectral peak
+  - Modifications to amp, freq, phase are applied uniformly to all bins within a region
+  - Developed method to separate voice pulses from the harmonic phases to avoid phasiness and roughness (?)
+  - Developed VPM to apply transformations such as creakiness, growling by adding and modifying subharmonics
+    - Allows decomposition of voice into three components which can be independently modified: harmonics, noise, transients
+  - In the process, breathy and noisy sounds are stored untransformed (in residual) and can be added back to the sound
+- The main characteristics which are determined by the Performer Model are the tempo, the deviation of note duration from the standard value, the vibrato occurrences and characteristics, the loudness of each note, and how notes are attacked, connected and released in terms of musical articulation (e.g. legato, staccato, etc.)
+- High-level expression is not addressed
+- **Database Classification**
+- 521 combinations of the 29 possible Spanish allophones are sufficient
+- A: set of all samples used in synthesis. Grouped by pitch (can allow transp +/- 6 semitones), 4 loudness levels, 2 articulations, 2 temp contexts (12 groups in total)
+- B: set of vibratos, used as templates for modifying (flat) samples in A
+  - EpR (gain, slope, slope depth)
+  - pitch variations relative to their slowly varying mean
+  - set of marks pointing the beginning of each vibrato cycle and used as anchor points for transformations (for instance time-scaling can be achieved by repeating and interpolating vibrato cycles) and for estimations (for example vibrato rate would be the inverse of the duration of one cycle).
+  - attack, sustain and release sections
+  - EpR voice model ensures that the harmonics will follow the timbre envelope defined by the formants while varying their frequency
+- C: set of articulations: note attacks, transitions, releases
+- **Forming the Database**
+- Automated much of the segmentation process
+- In our recording scripts we set tempo, pitch and loudness to be constant along each sentence. 
+- want to capture loudness and pitch variations inherent to phonetic articulations (see Figure 16), and make them independent of the ones related to musical performance. Another reason is that we want to constrain the singer’s voice quality and expression to ensure a maximal consistency between different samples among the database, intending to help hiding the fact that the system is concatenating samples and increasing the sensation of a continuous flow.
+- **Result**
+- If we restricted our view to the sonic space we deal with, we would reach the conclusion that transformed samples do connect perfectly. However, this is not true, because the actual sonic space of the singing voice is much richer and complex than our approximation. Thus, transformed samples almost never connect perfectly. Many voice features are not described precisely by the coordinates in A subspace, and others such as voice phonation modes are just ignored.
 
-###TIMBRE REMAPPING THROUGH A REGRESSION-TREE TECHNIQUE, Dan Stowell and Mark D. Plumbley, Centre for Digital Music, Queen Mary University of London, UK (2010)
+###[TIMBRE REMAPPING THROUGH A REGRESSION-TREE TECHNIQUE, Dan Stowell and Mark D. Plumbley, Centre for Digital Music, Queen Mary University of London, UK (2010)](http://smcnetwork.org/files/proceedings/2010/7.pdf)
 
 "We consider the task of inferring associations between two differently-distributed and unlabelled sets of timbre data."
 
